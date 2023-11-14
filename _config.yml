@@ -2,3 +2,7 @@ title: Preetika Kaur
 description: "University of Wyoming"
 logo: /images/headshot.jpj
 theme: jekyll-theme-Minimal
+
+
+navigation:
+-{file: "Publications.md", title: "Publications"}
