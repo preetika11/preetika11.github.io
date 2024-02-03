@@ -7,6 +7,7 @@ categories: media
 #about me:
 <img align= "right" width="200" src="/images/headshot.jpg">
 
+
 ### Education
 -Civil Engineering, PhD
 -Biosystems Engineering, M.S
