@@ -1473,6 +1473,17 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 			/* Changes for devices with a screen width of 736px or less */
+			.image-circle {
+				width: 150px;
+				height: 150px;
+				overflow: hidden;
+				border-radius: 50%;
+				display: inline-block;
+			}
+			.image-circle img {
+				width: 100%;
+				height: auto;
+			}
 			.featured li {
 				display: block;
 				padding: 0.5em 0;
