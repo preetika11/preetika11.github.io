@@ -1472,6 +1472,21 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 736px) {
+			/* Changes for devices with a screen width of 736px or less */
+			.featured li {
+				display: block;
+				padding: 0.5em 0;
+			}
+			ul.buttons {
+				display: block;
+				text-align: center;
+			}
+			.icon {
+				width: 1.1em;
+			}
+			.wrapper {
+				padding: 1.5em 0 2.5em 0;
+			}
 
 			.row {
 				display: flex;
