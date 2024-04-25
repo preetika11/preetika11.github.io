@@ -10,19 +10,20 @@
         font-family: Georgia, 'Times New Roman', Times, serif;
         line-height: 1.6;
       }
-      h1, h2 {
+      h1 {
+        text-align: center;
+        margin: 0 auto;
         font-family: Arial, sans-serif;
         color: #333;
       }
-      p {
-        font-size: 18px;
-        color: #333;
+     .columns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
       }
-      a {
-        color: #0066cc;
-      }
-      a:hover {
-        text-decoration: underline;
+     .column {
+        flex: 1;
+        margin: 10px;
       }
      .image-circle {
         border-radius: 50%;
@@ -34,6 +35,19 @@
         width: 100%;
         height: auto;
       }
+     .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 0 5px;
+        border-radius: 5px;
+        background-color: #0066cc;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+     .button:hover {
+        background-color: #004d99;
+      }
     </style>
   </head>
   <body>
@@ -41,21 +55,27 @@
       <h1>Preetika Kaur</h1>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Research.html">Research</a></li>
-          <li><a href="Teaching.html">Teaching</a></li>
-          <li><a href="Awards_Honors.html">Awards and Honors</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" class="button is-primary">Home</a></li>
+          <li><a href="Research.html" class="button is-primary">Research</a></li>
+          <li><a href="Teaching.html" class="button is-primary">Teaching</a></li>
+          <li><a href="Awards_Honors.html" class="button is-primary">Awards and Honors</a></li>
+          <li><a href="contact.html" class="button is-primary">Contact</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <section>
-        <div class="image-circle">
-          <img src="images/pop_sjhot.jpg" alt="Your Image">
+        <div class="columns">
+          <div class="column is-one-third">
+            <div class="image-circle">
+              <img src="images/pop_sjhot.jpg" alt="Your Image">
+            </div>
+          </div>
+          <div class="column is-two-thirds">
+            <h2>Who am I?</h2>
+            <p>I’m a PhD student in civil engineering with a passion for advancing my understanding of snow hydrology. I am interested in exploring the power of remote sensing technologies, emerging snow models, and developing machine learning models from extensively available climate datasets thereby contributing to the sustainable management of water resources in snow dominated regions.</p>
+          </div>
         </div>
-        <h2>Who am I?</h2>
-        <p>I’m a PhD student in civil engineering with a passion for advancing my understanding of snow hydrology. I am interested in exploring the power of remote sensing technologies, emerging snow models, and developing machine learning models from extensively available climate datasets thereby contributing to the sustainable management of water resources in snow dominated regions.</p>
       </section>
     </main>
   </body>
