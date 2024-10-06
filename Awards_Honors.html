@@ -1,159 +1,354 @@
 <!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Awards and Honors</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="no-sidebar is-preload">
-		<div id="page-wrapper">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards & Honors | Preetika Kaur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Raleway', sans-serif;
+        line-height: 1.6;
+        background-color: #f2f2f2;
+      }
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1>
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="index.html">Welcome</a></li>
-							<li class="submenu">
-								<a href="#">Layouts</a>
-								<ul>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li class="submenu">
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Dolore Sed</a></li>
-											<li><a href="#">Consequat</a></li>
-											<li><a href="#">Lorem Magna</a></li>
-											<li><a href="#">Sed Magna</a></li>
-											<li><a href="#">Ipsum Nisl</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="#" class="button primary">Sign Up</a></li>
-						</ul>
-					</nav>
-				</header>
+      /* Fullscreen Hero Section */
+      .hero {
+        background-image: url('images/background1.JPG'); /* Replace with your awards-related image */
+        height: 50vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
 
-			<!-- Main -->
-				<article id="main">
+      .hero h1 {
+        font-size: 3rem;
+        margin: 0;
+      }
 
-					<header class="special container">
-						<span class="icon solid fa-mobile-alt"></span>
-						<h2>And finally there's <strong>No Sidebar</strong></h2>
-						<p>Where that in the center faces the nameless horrors alone.</p>
-					</header>
+      /* Overlay */
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4); /* Adds a dark overlay */
+        z-index: 1;
+      }
 
-					<!-- One -->
-						<section class="wrapper style4 container">
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
 
-							<!-- Content -->
-								<div class="content">
-									<section>
-										<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-										<header>
-											<h3>Dolore Amet Consequat</h3>
-										</header>
-										<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum massa. Morbi eu faucibus massa. Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-										<p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique. Sed id sem et massa ornare pellentesque. Maecenas pharetra porta accumsan. </p>
-										<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus, non hendrerit ipsum arcu tristique est.</p>
-									</section>
-								</div>
+      /* Navigation */
+      nav {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+      }
 
-						</section>
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
 
-					<!-- Two -->
-						<section class="wrapper style1 container special">
-							<div class="row">
-								<div class="col-4 col-12-narrower">
+      nav ul li {
+        margin-left: 20px;
+      }
 
-									<section>
-										<header>
-											<h3>This is Something</h3>
-										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
-											</ul>
-										</footer>
-									</section>
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
 
-								</div>
-								<div class="col-4 col-12-narrower">
+      nav ul li a:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
 
-									<section>
-										<header>
-											<h3>Also Something</h3>
-										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
-											</ul>
-										</footer>
-									</section>
+      /* Content Section */
+      .content-section {
+        padding: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
 
-								</div>
-								<div class="col-4 col-12-narrower">
+      .content-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
 
-									<section>
-										<header>
-											<h3>Probably Something</h3>
-										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
-											</ul>
-										</footer>
-									</section>
+      /* Flip Card Container */
+      .flip-card {
+        background-color: transparent;
+        width: 250px;
+        height: 250px;
+        perspective: 1000px;
+        margin-bottom: 20px;
+      }
 
-								</div>
-							</div>
-						</section>
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
 
-				</article>
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
 
-			<!-- Footer -->
-				<footer id="footer">
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      }
 
-					<ul class="icons">
-						<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands circle fa-google-plus-g"><span class="label">Google+</span></a></li>
-						<li><a href="#" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>
-					</ul>
+      .flip-card-front {
+        background-color: #fff;
+      }
 
-					<ul class="copyright">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
+      .flip-card-back {
+        background-color: #0066cc;
+        color: white;
+        transform: rotateY(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
 
-				</footer>
+      .caption {
+        margin-top: 10px;
+        font-size: 1.1rem;
+        color: #333;
+      }
 
-		</div>
+      /* Grid Layout for Sections */
+      .awards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 30px;
+      }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
 
-	</body>
+        .content-section h2 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Awards & Honors</h1>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Research.html">Research</a></li>
+          <li><a href="Awards_Honors.html">Outreach</a></li>
+          <li><a href="CV.html">CV</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Awards Content -->
+    <section class="content-section">
+      <h2>University of Wyoming</h2>
+      <div class="awards-grid">
+
+        <!-- SnowEx Hackweek Award -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/snowex_hackweek.JPG" alt="SnowEx Hackweek" style="width:100%; height:100%; border-radius:10px;">
+            </div>
+            <div class="flip-card-back">
+              <p>Funding support (travel and accommodation) by UW eScience institute for 2024 SnowEx hack week</p>
+            </div>
+          </div>
+          <div class="caption">SnowEx Hackweek</div>
+        </div>
+
+        <!-- AI+Science Summer School -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/uofc.jpg" alt="AI+Science Summer School" style="width:100%; height:100%; border-radius:10px;">
+            </div>
+            <div class="flip-card-back">
+              <p>Travel scholarship for 2024 AI+Science Summer School at the University of Chicago Data Science Institute</p>
+            </div>
+          </div>
+          <div class="caption">AI+Science Summer School</div>
+        </div>
+
+		
+        <!-- ESRI DEV SUMMIT -->
+        <div class="flip-card">
+			<div class="flip-card-inner">
+			  <div class="flip-card-front">
+				<img src="images/dev_summit.heic" alt="FED_GIS" style="width:100%; height:100%; border-radius:10px;">
+			  </div>
+			  <div class="flip-card-back">
+				<p>Student assistantship for ESRIs Developers Summit in Palm Springs, California</p>
+			  </div>
+			</div>
+			<div class="caption">ESRI Developers SUMMIT</div>
+		  </div>
+
+		  
+        <!-- ESRI FED GIS -->
+        <div class="flip-card">
+			<div class="flip-card-inner">
+			  <div class="flip-card-front">
+				<img src="images/fed_gis.JPG" alt="FED_GIS" style="width:100%; height:100%; border-radius:10px;">
+			  </div>
+			  <div class="flip-card-back">
+				<p>Graduate student assistantship for ESRIs Federal GIS conference in Washington DC</p>
+			  </div>
+			</div>
+			<div class="caption">ESRI Developers SUMMIT</div>
+		  </div>
+  
+        <!-- More UW Awards without images -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front" style="background-color: #f9f9f9; display: flex; align-items: center; justify-content: center;">
+              <p style="padding: 10px;">International student scholarship for Fall 2024/ Spring 2025</p>
+            </div>
+            <div class="flip-card-back">
+              <p>Scholarship awarded by University of Wyoming for international students</p>
+            </div>
+          </div>
+          <div class="caption">International Scholarship</div>
+        </div>
+
+        <!-- Add more awards similarly with or without images -->
+      </div>
+
+      <h2>Auburn University</h2>
+      <div class="awards-grid">
+        <!-- Auburn Award 1 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/ms_thesis.JPG" alt="Master’s Thesis Award" style="width:100%; height:100%; border-radius:10px;">
+            </div>
+            <div class="flip-card-back">
+              <p>Master’s Thesis Award by Auburn University</p>
+            </div>
+          </div>
+          <div class="caption">Thesis Award</div>
+        </div>
+
+        <!-- Auburn Award 2 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/outstanding_ms.JPG" alt="Outstanding Masters Student" style="width:100%; height:100%; border-radius:10px;">
+            </div>
+            <div class="flip-card-back">
+              <p>Outstanding Masters Student Award by Auburn University (2024)</p>
+            </div>
+          </div>
+          <div class="caption">Outstanding Student</div>
+        </div>
+
+		<!-- Auburn Boyd Scott -->
+        <div class="flip-card">
+			<div class="flip-card-inner">
+			  <div class="flip-card-front">
+				<img src="images/boyd_scott.HEIC" alt="boyd_scott" style="width:100%; height:100%; border-radius:10px;">
+			  </div>
+			  <div class="flip-card-back">
+				<p>Received 2nd place in the Boyd-Scott Graduate Research Award which recognizes excellence in the conduct and presentation of research to build the knowledge base needed by agricultural engineers who design equipment, facilities, and processes for the sustainable operation of a biological system</p>
+			  </div>
+			</div>
+			<div class="caption">Boyd Scott Award</div>
+		  </div>
+
+		  <!-- Auburn AABFEIO -->
+		  <div class="flip-card">
+			<div class="flip-card-inner">
+			  <div class="flip-card-front">
+				<img src="images/aabfeio.HEIC" alt="AABFEIO" style="width:100%; height:100%; border-radius:10px;">
+			  </div>
+			  <div class="flip-card-back">
+				<p>Graduate student paper award (1st position) by AABFEIO ASABE 2023 held at Omaha, Nebraska</p>
+			  </div>
+			</div>
+			<div class="caption">AABFEIO Award</div>
+		  </div>
+
+		   <!-- Auburn ASABE23 -->
+		   <div class="flip-card">
+			<div class="flip-card-inner">
+			  <div class="flip-card-front">
+				<img src="images/presentation_excellence.HEIC" alt="ASABE23" style="width:100%; height:100%; border-radius:10px;">
+			  </div>
+			  <div class="flip-card-back">
+				<p>Presentation Excellence Award for outstanding presentation at the ASABE's 2023 Annual International Meeting. This award recognizes the top 15% of student presentations that demonstrate excellence in content, delivery, and impact.</p>
+			  </div>
+			</div>
+			<div class="caption">ASABE 2023 Award</div>
+		  </div>
+
+        <!-- More Auburn Awards -->
+      </div>
+
+      <h2>Punjab Agricultural University</h2>
+      <div class="awards-grid">
+        <!-- PAU Award 1 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front" style="background-color: #f9f9f9; display: flex; align-items: center; justify-content: center;">
+              <p style="padding: 10px;">R.N Kaul Memorial Scholarship for Agricultural Engineering Female students</p>
+            </div>
+            <div class="flip-card-back">
+              <p>Scholarship awarded for outstanding performance in senior year</p>
+            </div>
+          </div>
+          <div class="caption">R.N Kaul Memorial Scholarship</div>
+        </div>
+
+        <!-- More PAU Awards -->
+      </div>
+
+    </section>
+
+  </body>
 </html>
