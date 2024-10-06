@@ -1,96 +1,157 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preetika Kaur</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
       body {
-		background-image: url('images/background.jpg');
-		background-size: cover; 		
-        background-color: #f2f2f2;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin: 0;
+        font-family: 'Raleway', sans-serif;
         line-height: 1.6;
+        background-color: #f2f2f2;
       }
-      h1 {
-        text-align: center;
-        margin: 0 auto;
-        font-family: Arial, sans-serif;
-        color: #334;
-      }
-     .columns {
-		flex: 1;
+
+      /* Fullscreen Hero Section */
+      .hero {
+        background-image: url('images/background.jpg'); /* Replace with your mountains image */
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-      }
-     .column {
-        flex: 1;
-        padding: 10px;
-		display: flex;
         align-items: center;
+        text-align: center;
+        color: white;
       }
-     .image-circle {
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        overflow: hidden;
+
+      .hero h1 {
+        font-size: 4rem;
+        margin: 0;
       }
-     .image-circle img {
-        width: 100%;
+
+      .hero p {
+        font-size: 1.5rem;
+        margin-top: 10px;
+      }
+
+      /* Overlay */
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4); /* Adds a dark overlay */
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Profile Section */
+      .profile-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+      }
+
+      .profile-section img {
+        width: 250px;
         height: auto;
+        border-radius: 50%;
+        margin-right: 50px;
       }
-     .button {
-        display: inline-block;
-        padding: 10px 20px;
-        margin: 0 5px;
-        border-radius: 5px;
-        background-color: #0066cc;
-        color: #fff;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
+
+      .profile-description {
+        max-width: 600px;
       }
-     .button:hover {
-        background-color: #004d99;
+
+      .profile-description h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
       }
+
+      .profile-description p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #666;
+      }
+
+      /* Navigation */
+      nav {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+      }
+
       nav ul {
-        list-style-type: none;
+        list-style: none;
+        margin: 0;
         padding: 0;
         display: flex;
-        justify-content: flex-end;
       }
+
       nav ul li {
-        margin: 0 10px;
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        background-color: rgba(0, 0, 0, 0.8);
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Preetika Kaur</h1>
+    
+    <!-- Hero Section with Mountain Background -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Preetika Kaur, PhD</h1>
+        <p>PhD Student | Civil Engineering</p>
+      </div>
+
+      <!-- Navigation Bar -->
       <nav>
         <ul>
-          <li><a href="index.html" class="button is-primary">Home</a></li>
-          <li><a href="Research.html" class="button is-primary">Research</a></li>
-          <li><a href="Teaching.html" class="button is-primary">Teaching</a></li>
-          <li><a href="Awards_Honors.html" class="button is-primary">Awards and Honors</a></li>
-          <li><a href="contact.html" class="button is-primary">Contact</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Research</a></li>
+          <li><a href="#">Outreach</a></li>
+          <li><a href="#">CV</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </header>
-    <main>
-      <section>
-        <div class="columns">
-          <div class="column is-one-third">
-            <div class="image-circle">
-              <img src="images/pop_sjhot.jpg" alt="Your Image">
-            </div>
-          </div>
-          <div class="column is-two-thirds">
-            <h2>Who am I?</h2>
-            <p>I’m a PhD student in civil engineering with a passion for advancing my understanding of snow hydrology. I am interested in exploring the power of remote sensing technologies, emerging snow models, and developing machine learning models from extensively available climate datasets thereby contributing to the sustainable management of water resources in snow dominated regions.</p>
-          </div>
-        </div>
-      </section>
-    </main>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <img src="images/profile.jpg" alt="Preetika Kaur Profile Picture">
+      <div class="profile-description">
+        <h2>Who am I?</h2>
+        <p>
+          I’m a PhD student in civil engineering with a passion for advancing my understanding of snow hydrology. 
+          I am interested in exploring the power of remote sensing technologies, emerging snow models, and developing machine learning models 
+          from extensively available climate datasets, thereby contributing to the sustainable management of water resources in snow-dominated regions.
+        </p>
+      </div>
+    </section>
+
   </body>
 </html>
