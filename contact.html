@@ -1,120 +1,199 @@
 <!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Contact - Twenty by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="contact is-preload">
-		<div id="page-wrapper">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Preetika Kaur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome for icons -->
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Raleway', sans-serif;
+        line-height: 1.6;
+        background-color: #f2f2f2;
+      }
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1>
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="index.html">Welcome</a></li>
-							<li class="submenu">
-								<a href="#">Layouts</a>
-								<ul>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li class="submenu">
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Dolore Sed</a></li>
-											<li><a href="#">Consequat</a></li>
-											<li><a href="#">Lorem Magna</a></li>
-											<li><a href="#">Sed Magna</a></li>
-											<li><a href="#">Ipsum Nisl</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="#" class="button primary">Sign Up</a></li>
-						</ul>
-					</nav>
-				</header>
+      /* Fullscreen Hero Section */
+      .hero {
+        background-image: url('images/background1.JPG'); /* Replace with a contact-related image */
+        height: 50vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
 
-			<!-- Main -->
-				<article id="main">
+      .hero h1 {
+        font-size: 3rem;
+        margin: 0;
+      }
 
-					<header class="special container">
-						<span class="icon solid fa-envelope"></span>
-						<h2>Get In Touch</h2>
-						<p>Use the form below to give /dev/null a piece of your mind.</p>
-					</header>
+      /* Overlay */
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4); /* Adds a dark overlay */
+        z-index: 1;
+      }
 
-					<!-- One -->
-						<section class="wrapper style4 special container medium">
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
 
-							<!-- Content -->
-								<div class="content">
-									<form>
-										<div class="row gtr-50">
-											<div class="col-6 col-12-mobile">
-												<input type="text" name="name" placeholder="Name" />
-											</div>
-											<div class="col-6 col-12-mobile">
-												<input type="text" name="email" placeholder="Email" />
-											</div>
-											<div class="col-12">
-												<input type="text" name="subject" placeholder="Subject" />
-											</div>
-											<div class="col-12">
-												<textarea name="message" placeholder="Message" rows="7"></textarea>
-											</div>
-											<div class="col-12">
-												<ul class="buttons">
-													<li><input type="submit" class="special" value="Send Message" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</div>
+      /* Navigation */
+      nav {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+      }
 
-						</section>
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
 
-				</article>
+      nav ul li {
+        margin-left: 20px;
+      }
 
-			<!-- Footer -->
-				<footer id="footer">
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
 
-					<ul class="icons">
-						<li><a href="https://twitter.com/kaur_preetika" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands circle fa-google-plus-g"><span class="label">Google+</span></a></li>
-						<li><a href="https://github.com/preetika11" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>
-					</ul>
+      nav ul li a:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
 
-					<ul class="copyright">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
+      /* Contact Section */
+      .content-section {
+        padding: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center; /* Aligns the image and the icons vertically */
+        justify-content: center;
+      }
 
-				</footer>
+      .content-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+      }
 
-		</div>
+      /* Profile Image */
+      .profile-image {
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+        margin-right: 50px;
+      }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      .contact-info {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        color: #666;
+      }
 
-	</body>
+      .social-icons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .social-icons a {
+        color: #333;
+        font-size: 2rem;
+        margin: 15px 0; /* Adds space between the icons */
+        transition: color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #0066cc; /* Hover color for icons */
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .content-section {
+          flex-direction: column; /* Stack image and icons on small screens */
+        }
+
+        .profile-image {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .social-icons a {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Contact Me</h1>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Research.html">Research</a></li>
+          <li><a href="Awards_Honors.html">Awards</a></li>
+          <li><a href="CV.html">CV</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Contact Information -->
+    <section class="content-section">
+      <!-- Profile Image on Left -->
+      <img src="images/contact.jpg" alt="Preetika Kaur" class="profile-image"> <!-- Replace with your actual profile picture -->
+
+      <!-- Social Media Icons on the Right -->
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/preetikakaur" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://x.com/kaur_preetika" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=doQ9QUcAAAAJ&hl=en&oi=ao" target="_blank">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="https://www.researchgate.net/profile/Preetika-Kaur/research" target="_blank">
+          <i class="fab fa-researchgate"></i>
+        </a>
+      </div>
+    </section>
+
+  </body>
 </html>
