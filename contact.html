@@ -106,7 +106,7 @@
         width: 300px;
         height: auto;
         border-radius: 10px;
-        margin-right: 50px;
+        margin-right: 40px;
       }
 
       .contact-info {
@@ -119,14 +119,22 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
       }
 
       .social-icons a {
+		display: flex;
+		align-items: center;
         color: #333;
         font-size: 2rem;
         margin: 15px 0; /* Adds space between the icons */
+		text-decoration: none;
         transition: color 0.3s ease;
+      }
+
+	  .social-icons a i {
+		margin-right: 10px;
+		font-size: 3rem;
       }
 
       .social-icons a:hover {
@@ -149,7 +157,11 @@
         }
 
         .social-icons a {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
+        }
+
+		.social-icons a i {
+          font-size: 1.8rem;
         }
       }
     </style>
