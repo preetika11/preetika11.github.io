@@ -1,43 +1,237 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
   <head>
-    <title>Research</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
-  <body class="left-sidebar is-preload">
-    <div id="page-wrapper">
-  
-      <!-- Header -->
-        <header>
-          <h1>Research</h1>
-          <nav>
-            <ul>
-              <li><a href="index.html" class="button is-primary">Home</a></li>
-              <li><a href="Research.html" class="button is-primary">Research</a></li>
-              <li><a href="Teaching.html" class="button is-primary">Teaching</a></li>
-              <li><a href="Awards_Honors.html" class="button is-primary">Awards and Honors</a></li>
-              <li><a href="contact.html" class="button is-primary">Contact</a></li>
-            </ul>
-          </nav>
-        </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Preetika Kaur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Raleway', sans-serif;
+        line-height: 1.6;
+        background-color: #f2f2f2;
+      }
 
-      <!-- Main -->
-        <main>
-          <section>
-            <div class="columns">
-              <div class="column is-one-third">
-                <a href="PhD.html">
-                  <div class="image-circle">
-                    <img src="images/phd.jpg" alt="PhD">
-                  </div>
-                </a>
-              </div>
-              <div class="column is-two-thirds">
-          <a href="MS.html"> </a>
-              </div>
-            </div>
-          </section>
-        </main>
+      /* Fullscreen Hero Section */
+      .hero {
+        background-image: url('images/background1.JPG'); /* Replace with your mountains image */
+        height: 50vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin: 0;
+      }
+
+      /* Overlay */
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4); /* Adds a dark overlay */
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Navigation */
+      nav {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Content Section */
+      .content-section {
+        padding: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .content-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .research-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 40px;
+      }
+
+      .research-item img {
+        width: 200px;  /* Adjust as needed */
+        height: auto;
+        margin-right: 30px;
+        border-radius: 10px;
+      }
+
+      .research-details {
+        max-width: 750px;
+      }
+
+      .research-details h4 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: #0066cc;
+      }
+
+      .research-details p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .content-section h2 {
+          font-size: 2rem;
+        }
+
+        .research-item {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .research-item img {
+          margin: 0 0 20px 0;
+        }
+
+        .research-details h4 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Research</h1>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Research.html">Research</a></li>
+          <li><a href="Awards_Honors.html">Awards</a></li>
+          <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Research Content -->
+    <section class="content-section">
+      <h2>PhD Research</h2>
+
+      <!-- PhD Research Item 1 -->
+      <div class="research-item">
+        <img src="images/snowmodel.jpeg" alt="SnowModel Research Image">
+        <div class="research-details">
+          <h4>Understanding snowpack dynamics in Jemez mountains of NM using SnowModel</h4>
+          <p>
+            We are using SnowModel to model liquid water content and relate it to coherence derived from UAVSAR flights from the 2020 SnowEx Campaign.
+          </p>
+        </div>
+      </div>
+
+      <!-- PhD Research Item 2 -->
+      <div class="research-item">
+        <img src="images/insar.JPG" alt="InSAR Global Feasibility Map Image">
+        <div class="research-details">
+          <h4>L-Band InSAR global feasibility map for SWE retrieval</h4>
+          <p>
+            We are trying to create a global dataset for SWE retrievals using L-Band InSAR.
+          </p>
+        </div>
+      </div>
+
+      <h2>Masters Research</h2>
+
+      <!-- Masters Research Item 1 -->
+      <div class="research-item">
+        <img src="images/covercrops.JPG" alt="Cover Crop Effects Image">
+        <div class="research-details">
+          <h4>Cover crop effects on X-ray computed tomography–derived soil pore characteristics</h4>
+          <p>
+            This study aimed to compare the effects of cover crops (CC) and no cover crops (NC) on soil macropore characteristics in strip-tillage cotton fields. Using high-resolution X-ray CT scanning, the results showed that cover crops increased soil porosity and pore number density in the topsoil. Additionally, deeper subsurface layers under CC had higher connection probability, indicating potential influence on subsurface flow pathways. These findings suggest that cover crop roots play a significant role in shaping soil pore structures, which can impact water and contaminant transport.
+          </p>
+        </div>
+      </div>
+
+      <!-- Masters Research Item 2 -->
+      <div class="research-item">
+        <img src="images/tillage.jpg" alt="Soil Pores in Tillage Image">
+        <div class="research-details">
+          <h4>Characterization of soil pores in strip-tilled and conventionally-tilled soil using X-ray computed tomography</h4>
+          <p>
+            This study investigated the effects of conventional tillage (CT) vs. strip tillage (ST) on soil pore characteristics across two seasons. Soil cores collected from cotton fields were analyzed using X-ray computed tomography. The results showed that ST had significantly higher macroporosity, network density, and pore connectivity compared to CT in the first season, likely due to less soil disturbance. However, in both tillage systems, pore properties decreased significantly in the second season due to soil reconsolidation from rainfall. The findings highlight how tillage practices and seasonal changes influence soil pore morphology and its potential impact on contaminant transport.
+          </p>
+        </div>
+      </div>
+
+      <!-- Masters Research Item 3 -->
+      <div class="research-item">
+        <img src="images/soilpore.jpg" alt="CT Scanning Resolution Image">
+        <div class="research-details">
+          <h4>Effect of Image Resolution and Soil Core Size on Soil Pore Characteristics</h4>
+          <p>
+            This study aimed to compare the effects of CT scanning resolution and soil core size on detected soil pore properties. Cylindrical soil cores of different diameters (76 mm and 150 mm) were collected from a cotton field under conventional and strip tillage in two seasons. Results showed that higher resolution scanning revealed more isolated pores with greater anisotropy, while smaller core diameters detected fewer pores but had greater pore connectivity. Significant differences were observed mainly in conventional tillage cores from season 2. The findings highlight the tradeoff between resolution, field of view, and core size, emphasizing the importance of aligning sampling methods with research objectives.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+  </body>
+</html>
