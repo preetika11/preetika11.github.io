@@ -9,7 +9,7 @@
       body {
         margin: 0;
         font-family: 'Raleway', sans-serif;
-        line-height: 1.6;
+        line-height: 1.2;
         background-color: #f2f2f2;
       }
 
@@ -27,8 +27,13 @@
       }
 
       .hero h1 {
-        font-size: 3rem;
+        font-size: 4rem;
         margin: 0;
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+        margin-top: 10px;
       }
 
       .hero::before {
@@ -86,65 +91,29 @@
       }
 
       .content-section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
+        font-size: 2rem;
+        margin-bottom: 10px;
         color: #333;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 5px;
       }
 
-      .flip-card {
-        background-color: transparent;
-        width: 250px;
-        height: 250px;
-        perspective: 1000px;
+      .award-entry {
         margin-bottom: 20px;
+        padding-left: 15px;
+        border-left: 4px solid #0066cc;
       }
 
-      .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
+      .award-entry h4 {
+        font-size: 1.2rem;
+        color: #0066cc;
+        margin-bottom: 5px;
       }
 
-      .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-
-      .flip-card-front, .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      }
-
-      .flip-card-front {
-        background-color: #fff;
-      }
-
-      .flip-card-back {
-        background-color: #0066cc;
-        color: white;
-        transform: rotateY(180deg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-      }
-
-      .caption {
-        margin-top: 10px;
-        font-size: 1.1rem;
-        color: #333;
-      }
-
-      .awards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-gap: 30px;
+      .award-entry p {
+        margin: 0;
+        font-size: 1rem;
+        color: #444;
       }
 
       @media (max-width: 768px) {
@@ -153,7 +122,7 @@
         }
 
         .content-section h2 {
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
       }
     </style>
@@ -161,7 +130,8 @@
   <body>
     <header class="hero">
       <div class="hero-content">
-        <h1>Awards & Honors</h1>
+        <h1>Preetika Kaur, M.S.</h1>
+        <p>Awards & Honors</p>
       </div>
       <nav>
         <ul>
@@ -175,12 +145,56 @@
       </nav>
     </header>
 
-    <!-- AWARDS HTML GOES HERE -->
     <section class="content-section">
-      <!-- Original content restored -->
-      <!-- All award cards from original Awards_Honors.html already included correctly -->
-      <!-- To avoid duplicating 1000+ lines of content in this update, your file has been restored with all original awards, and formatting is made consistent with index/contact/research -->
-    </section>
+      <h2>University of Wyoming</h2>
+      <div class="award-entry">
+        <h4>SnowEx Hackweek</h4>
+        <p>Funding support (travel and accommodation) by UW eScience institute for 2024 SnowEx hack week.</p>
+      </div>
+      <div class="award-entry">
+        <h4>AI+Science Summer School</h4>
+        <p>Travel scholarship for 2024 AI+Science Summer School at the University of Chicago Data Science Institute.</p>
+      </div>
+      <div class="award-entry">
+        <h4>ESRI Developers Summit</h4>
+        <p>Student assistantship for ESRI’s Developers Summit in Palm Springs, California.</p>
+      </div>
+      <div class="award-entry">
+        <h4>ESRI FED GIS</h4>
+        <p>Graduate student assistantship for ESRI’s Federal GIS conference in Washington, DC.</p>
+      </div>
+      <div class="award-entry">
+        <h4>International Student Scholarship</h4>
+        <p>Awarded by University of Wyoming for Fall 2024 / Spring 2025.</p>
+      </div>
 
+      <h2>Auburn University</h2>
+      <div class="award-entry">
+        <h4>Master’s Thesis Award</h4>
+        <p>Received from Auburn University for outstanding MS research.</p>
+      </div>
+      <div class="award-entry">
+        <h4>Outstanding Master’s Student Award</h4>
+        <p>Recognized in 2024 by Auburn University.</p>
+      </div>
+      <div class="award-entry">
+        <h4>Boyd-Scott Graduate Research Award</h4>
+        <p>2nd place award recognizing excellence in agricultural engineering research.</p>
+      </div>
+      <div class="award-entry">
+        <h4>AABFEIO Graduate Student Paper Award</h4>
+        <p>1st place award at ASABE 2023 held in Omaha, Nebraska.</p>
+      </div>
+      <div class="award-entry">
+        <h4>ASABE 2023 Presentation Excellence</h4>
+        <p>Awarded to top 15% of student presentations demonstrating excellence in delivery and impact.</p>
+      </div>
+
+      <h2>Punjab Agricultural University</h2>
+      <div class="award-entry">
+        <h4>R.N. Kaul Memorial Scholarship</h4>
+        <p>Awarded to top-performing Agricultural Engineering female student during senior year.</p>
+      </div>
+    </section>
   </body>
 </html>
