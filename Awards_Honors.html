@@ -9,7 +9,7 @@
       body {
         margin: 0;
         font-family: 'Raleway', sans-serif;
-        line-height: 1.2;
+        line-height: 1.6;
         background-color: #f2f2f2;
       }
 
@@ -99,18 +99,34 @@
       }
 
       .award-entry {
-        margin-bottom: 20px;
-        padding-left: 15px;
-        border-left: 4px solid #0066cc;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 30px;
+        background: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       }
 
-      .award-entry h4 {
+      .award-entry img {
+        width: 120px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .award-text {
+        max-width: 800px;
+      }
+
+      .award-text h4 {
         font-size: 1.2rem;
         color: #0066cc;
         margin-bottom: 5px;
       }
 
-      .award-entry p {
+      .award-text p {
         margin: 0;
         font-size: 1rem;
         color: #444;
@@ -121,8 +137,14 @@
           font-size: 2.5rem;
         }
 
-        .content-section h2 {
-          font-size: 1.5rem;
+        .award-entry {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .award-text {
+          text-align: left;
         }
       }
     </style>
@@ -148,52 +170,83 @@
     <section class="content-section">
       <h2>University of Wyoming</h2>
       <div class="award-entry">
-        <h4>SnowEx Hackweek</h4>
-        <p>Funding support (travel and accommodation) by UW eScience institute for 2024 SnowEx hack week.</p>
+        <img src="images/snowex_hackweek.JPG" alt="SnowEx Hackweek">
+        <div class="award-text">
+          <h4>SnowEx Hackweek</h4>
+          <p>Funding support (travel and accommodation) by UW eScience institute for 2024 SnowEx hack week.</p>
+        </div>
       </div>
       <div class="award-entry">
-        <h4>AI+Science Summer School</h4>
-        <p>Travel scholarship for 2024 AI+Science Summer School at the University of Chicago Data Science Institute.</p>
+        <img src="images/uofc.jpg" alt="AI+Science">
+        <div class="award-text">
+          <h4>AI+Science Summer School</h4>
+          <p>Travel scholarship for 2024 AI+Science Summer School at the University of Chicago Data Science Institute.</p>
+        </div>
       </div>
       <div class="award-entry">
-        <h4>ESRI Developers Summit</h4>
-        <p>Student assistantship for ESRI’s Developers Summit in Palm Springs, California.</p>
+        <img src="images/dev_summit.jpg" alt="ESRI Dev Summit">
+        <div class="award-text">
+          <h4>ESRI Developers Summit</h4>
+          <p>Student assistantship for ESRI’s Developers Summit in Palm Springs, California.</p>
+        </div>
       </div>
       <div class="award-entry">
-        <h4>ESRI FED GIS</h4>
-        <p>Graduate student assistantship for ESRI’s Federal GIS conference in Washington, DC.</p>
+        <img src="images/fed_gis.JPG" alt="ESRI FED GIS">
+        <div class="award-text">
+          <h4>ESRI FED GIS</h4>
+          <p>Graduate student assistantship for ESRI’s Federal GIS conference in Washington, DC.</p>
+        </div>
       </div>
       <div class="award-entry">
-        <h4>International Student Scholarship</h4>
-        <p>Awarded by University of Wyoming for Fall 2024 / Spring 2025.</p>
+        <div class="award-text">
+          <h4>International Student Scholarship</h4>
+          <p>Awarded by University of Wyoming for Fall 2024 / Spring 2025.</p>
+        </div>
       </div>
 
       <h2>Auburn University</h2>
       <div class="award-entry">
-        <h4>Master’s Thesis Award</h4>
-        <p>Received from Auburn University for outstanding MS research.</p>
+        <img src="images/ms_thesis.JPG" alt="Thesis Award">
+        <div class="award-text">
+          <h4>Master’s Thesis Award</h4>
+          <p>Received from Auburn University for outstanding MS research.</p>
+        </div>
       </div>
       <div class="award-entry">
-        <h4>Outstanding Master’s Student Award</h4>
-        <p>Recognized in 2024 by Auburn University.</p>
+        <img src="images/outstanding_ms.JPG" alt="Outstanding Masters">
+        <div class="award-text">
+          <h4>Outstanding Master’s Student Award</h4>
+          <p>Recognized in 2024 by Auburn University.</p>
+        </div>
       </div>
       <div class="award-entry">
-        <h4>Boyd-Scott Graduate Research Award</h4>
-        <p>2nd place award recognizing excellence in agricultural engineering research.</p>
+        <img src="images/boyd_scott.jpg" alt="Boyd Scott">
+        <div class="award-text">
+          <h4>Boyd-Scott Graduate Research Award</h4>
+          <p>2nd place award recognizing excellence in agricultural engineering research.</p>
+        </div>
       </div>
       <div class="award-entry">
-        <h4>AABFEIO Graduate Student Paper Award</h4>
-        <p>1st place award at ASABE 2023 held in Omaha, Nebraska.</p>
+        <img src="images/aabfeio.jpg" alt="AABFEIO">
+        <div class="award-text">
+          <h4>AABFEIO Graduate Student Paper Award</h4>
+          <p>1st place award at ASABE 2023 held in Omaha, Nebraska.</p>
+        </div>
       </div>
       <div class="award-entry">
-        <h4>ASABE 2023 Presentation Excellence</h4>
-        <p>Awarded to top 15% of student presentations demonstrating excellence in delivery and impact.</p>
+        <img src="images/presentation_excellence.HEIC" alt="ASABE Presentation Excellence">
+        <div class="award-text">
+          <h4>ASABE 2023 Presentation Excellence</h4>
+          <p>Awarded to top 15% of student presentations demonstrating excellence in delivery and impact.</p>
+        </div>
       </div>
 
       <h2>Punjab Agricultural University</h2>
       <div class="award-entry">
-        <h4>R.N. Kaul Memorial Scholarship</h4>
-        <p>Awarded to top-performing Agricultural Engineering female student during senior year.</p>
+        <div class="award-text">
+          <h4>R.N. Kaul Memorial Scholarship</h4>
+          <p>Awarded to top-performing Agricultural Engineering female student during senior year.</p>
+        </div>
       </div>
     </section>
   </body>
