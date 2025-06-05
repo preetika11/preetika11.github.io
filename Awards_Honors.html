@@ -1,354 +1,191 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awards & Honors | Preetika Kaur</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        margin: 0;
-        font-family: 'Raleway', sans-serif;
-        line-height: 1.6;
-        background-color: #f2f2f2;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awards & Honors | Preetika Kaur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      /* Fullscreen Hero Section */
-      .hero {
-        background-image: url('images/background1.JPG'); /* Replace with your awards-related image */
-        height: 50vh;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-      }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fafafa;
+      color: #333;
+    }
 
+    header.hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('images/background1.JPG') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 400;
+      padding: 0.5rem 1rem;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    section.content {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #0066cc;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .award-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .award-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .award-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .award-card .content {
+      padding: 1rem;
+    }
+
+    .award-card h3 {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .award-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
       .hero h1 {
-        font-size: 3rem;
-        margin: 0;
-      }
-
-      /* Overlay */
-      .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.4); /* Adds a dark overlay */
-        z-index: 1;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
-      }
-
-      /* Navigation */
-      nav {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 2;
+        font-size: 2.5rem;
       }
 
       nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
+        flex-direction: column;
       }
+    }
+  </style>
+</head>
+<body>
 
-      nav ul li {
-        margin-left: 20px;
-      }
+<header class="hero">
+  <h1>Awards & Honors</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Research.html">Research</a></li>
+      <li><a href="Awards_Honors.html">Awards</a></li>
+      <li><a href="CV.html">CV</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-      nav ul li a {
-        text-decoration: none;
-        color: white;
-        font-size: 1rem;
-        padding: 10px 20px;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
-
-      nav ul li a:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-
-      /* Content Section */
-      .content-section {
-        padding: 50px;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      .content-section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #333;
-      }
-
-      /* Flip Card Container */
-      .flip-card {
-        background-color: transparent;
-        width: 250px;
-        height: 250px;
-        perspective: 1000px;
-        margin-bottom: 20px;
-      }
-
-      .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-      }
-
-      .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-
-      .flip-card-front, .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      }
-
-      .flip-card-front {
-        background-color: #fff;
-      }
-
-      .flip-card-back {
-        background-color: #0066cc;
-        color: white;
-        transform: rotateY(180deg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-      }
-
-      .caption {
-        margin-top: 10px;
-        font-size: 1.1rem;
-        color: #333;
-      }
-
-      /* Grid Layout for Sections */
-      .awards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-gap: 30px;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 2.5rem;
-        }
-
-        .content-section h2 {
-          font-size: 2rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-
-    <!-- Hero Section -->
-    <header class="hero">
-      <div class="hero-content">
-        <h1>Awards & Honors</h1>
+<section class="content">
+  <h2>University of Wyoming</h2>
+  <div class="card-grid">
+    <div class="award-card">
+      <img src="images/snowex_hackweek.JPG" alt="SnowEx Hackweek">
+      <div class="content">
+        <h3>SnowEx Hackweek</h3>
+        <p>Funding support by UW eScience Institute for 2024 SnowEx Hack Week.</p>
       </div>
+    </div>
 
-      <!-- Navigation Bar -->
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Research.html">Research</a></li>
-          <li><a href="Awards_Honors.html">Awards</a></li>
-          <li><a href="CV.html">CV</a></li>
-          <li><a href="Contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Awards Content -->
-    <section class="content-section">
-      <h2>University of Wyoming</h2>
-      <div class="awards-grid">
-
-        <!-- SnowEx Hackweek Award -->
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/snowex_hackweek.JPG" alt="SnowEx Hackweek" style="width:100%; height:100%; border-radius:10px;">
-            </div>
-            <div class="flip-card-back">
-              <p>Funding support (travel and accommodation) by UW eScience institute for 2024 SnowEx hack week</p>
-            </div>
-          </div>
-          <div class="caption">SnowEx Hackweek</div>
-        </div>
-
-        <!-- AI+Science Summer School -->
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/uofc.jpg" alt="AI+Science Summer School" style="width:100%; height:100%; border-radius:10px;">
-            </div>
-            <div class="flip-card-back">
-              <p>Travel scholarship for 2024 AI+Science Summer School at the University of Chicago Data Science Institute</p>
-            </div>
-          </div>
-          <div class="caption">AI+Science Summer School</div>
-        </div>
-
-		
-        <!-- ESRI DEV SUMMIT -->
-        <div class="flip-card">
-			<div class="flip-card-inner">
-			  <div class="flip-card-front">
-				<img src="images/dev_summit.jpg" alt="FED_GIS" style="width:100%; height:100%; border-radius:10px;">
-			  </div>
-			  <div class="flip-card-back">
-				<p>Student assistantship for ESRIs Developers Summit in Palm Springs, California</p>
-			  </div>
-			</div>
-			<div class="caption">ESRI Developers SUMMIT</div>
-		  </div>
-
-		  
-        <!-- ESRI FED GIS -->
-        <div class="flip-card">
-			<div class="flip-card-inner">
-			  <div class="flip-card-front">
-				<img src="images/fed_gis.JPG" alt="FED_GIS" style="width:100%; height:100%; border-radius:10px;">
-			  </div>
-			  <div class="flip-card-back">
-				<p>Graduate student assistantship for ESRIs Federal GIS conference in Washington DC</p>
-			  </div>
-			</div>
-			<div class="caption">ESRI FED GIS</div>
-		  </div>
-  
-        <!-- More UW Awards without images -->
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front" style="background-color: #f9f9f9; display: flex; align-items: center; justify-content: center;">
-              <p style="padding: 10px;">International student scholarship for Fall 2024/ Spring 2025</p>
-            </div>
-            <div class="flip-card-back">
-              <p>Scholarship awarded by University of Wyoming for international students</p>
-            </div>
-          </div>
-          <div class="caption">International Scholarship</div>
-        </div>
-
-        <!-- Add more awards similarly with or without images -->
+    <div class="award-card">
+      <img src="images/uofc.jpg" alt="AI+Science">
+      <div class="content">
+        <h3>AI+Science Summer School</h3>
+        <p>Travel scholarship for the 2024 program at University of Chicago.</p>
       </div>
+    </div>
 
-      <h2>Auburn University</h2>
-      <div class="awards-grid">
-        <!-- Auburn Award 1 -->
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/ms_thesis.JPG" alt="Master’s Thesis Award" style="width:100%; height:100%; border-radius:10px;">
-            </div>
-            <div class="flip-card-back">
-              <p>Master’s Thesis Award by Auburn University</p>
-            </div>
-          </div>
-          <div class="caption">Thesis Award</div>
-        </div>
+    <!-- Add more cards here as needed -->
+  </div>
 
-        <!-- Auburn Award 2 -->
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/outstanding_ms.JPG" alt="Outstanding Masters Student" style="width:100%; height:100%; border-radius:10px;">
-            </div>
-            <div class="flip-card-back">
-              <p>Outstanding Masters Student Award by Auburn University (2024)</p>
-            </div>
-          </div>
-          <div class="caption">Outstanding Student</div>
-        </div>
-
-		<!-- Auburn Boyd Scott -->
-        <div class="flip-card">
-			<div class="flip-card-inner">
-			  <div class="flip-card-front">
-				<img src="images/boyd_scott.jpg" alt="boyd_scott" style="width:100%; height:100%; border-radius:10px;">
-			  </div>
-			  <div class="flip-card-back">
-				<p>Received 2nd place in the Boyd-Scott Graduate Research Award which recognizes excellence in the conduct and presentation of research to build the knowledge base needed by agricultural engineers who design equipment, facilities, and processes for the sustainable operation of a biological system</p>
-			  </div>
-			</div>
-			<div class="caption">Boyd Scott Award</div>
-		  </div>
-
-		  <!-- Auburn AABFEIO -->
-		  <div class="flip-card">
-			<div class="flip-card-inner">
-			  <div class="flip-card-front">
-				<img src="images/aabfeio.jpg" alt="AABFEIO" style="width:100%; height:100%; border-radius:10px;">
-			  </div>
-			  <div class="flip-card-back">
-				<p>Graduate student paper award (1st position) by AABFEIO ASABE 2023 held at Omaha, Nebraska</p>
-			  </div>
-			</div>
-			<div class="caption">AABFEIO Award</div>
-		  </div>
-
-		   <!-- Auburn ASABE23 -->
-		   <div class="flip-card">
-			<div class="flip-card-inner">
-			  <div class="flip-card-front">
-				<img src="images/presentation_excellence.HEIC" alt="ASABE23" style="width:100%; height:100%; border-radius:10px;">
-			  </div>
-			  <div class="flip-card-back">
-				<p>Presentation Excellence Award for outstanding presentation at the ASABE's 2023 Annual International Meeting. This award recognizes the top 15% of student presentations that demonstrate excellence in content, delivery, and impact.</p>
-			  </div>
-			</div>
-			<div class="caption">ASABE 2023 Award</div>
-		  </div>
-
-        <!-- More Auburn Awards -->
+  <h2>Auburn University</h2>
+  <div class="card-grid">
+    <div class="award-card">
+      <img src="images/ms_thesis.JPG" alt="Thesis Award">
+      <div class="content">
+        <h3>Thesis Award</h3>
+        <p>Master’s Thesis Award by Auburn University.</p>
       </div>
+    </div>
 
-      <h2>Punjab Agricultural University</h2>
-      <div class="awards-grid">
-        <!-- PAU Award 1 -->
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front" style="background-color: #f9f9f9; display: flex; align-items: center; justify-content: center;">
-              <p style="padding: 10px;">R.N Kaul Memorial Scholarship for Agricultural Engineering Female students</p>
-            </div>
-            <div class="flip-card-back">
-              <p>Scholarship awarded for outstanding performance in senior year</p>
-            </div>
-          </div>
-          <div class="caption">R.N Kaul Memorial Scholarship</div>
-        </div>
-
-        <!-- More PAU Awards -->
+    <div class="award-card">
+      <img src="images/outstanding_ms.JPG" alt="Outstanding Student">
+      <div class="content">
+        <h3>Outstanding Student</h3>
+        <p>Awarded Outstanding Masters Student Award in 2024.</p>
       </div>
+    </div>
+  </div>
 
-    </section>
+  <h2>Punjab Agricultural University</h2>
+  <div class="card-grid">
+    <div class="award-card">
+      <div class="content">
+        <h3>R.N. Kaul Memorial Scholarship</h3>
+        <p>Awarded for top performance among senior-year Agri Engineering female students.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </body>
+</body>
 </html>
