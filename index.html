@@ -1,158 +1,195 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preetika Kaur</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        margin: 0;
-        font-family: 'Raleway', sans-serif;
-        line-height: 1.2;
-        background-color: #f2f2f2;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preetika Kaur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      background-color: #f2f2f2;
+    }
 
-      /* Fullscreen Hero Section */
-      .hero {
-        background-image: url('images/background1.JPG'); 
-        height: 50vh;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-      }
+    /* Hero Section */
+    .hero {
+      background-image: url('images/background1.JPG');
+      height: 50vh;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
 
-      .hero h1 {
-        font-size: 4rem;
-        margin: 0;
-      }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
 
-      .hero p {
-        font-size: 1.5rem;
-        margin-top: 10px;
-      }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
 
-      /* Overlay */
-      .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.4); /* Adds a dark overlay */
-        z-index: 1;
-      }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin: 0;
+    }
 
-      .hero-content {
-        position: relative;
-        z-index: 2;
-      }
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
 
-      /* Profile Section */
+    /* Navigation */
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin-left: 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      padding: 8px 14px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Profile Section */
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+      background-color: #ffffff;
+    }
+
+    .profile-section img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ccc;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-description {
+      max-width: 850px;
+      text-align: left;
+      padding: 0 1rem;
+    }
+
+    .profile-description h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .profile-description p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .profile-description strong {
+      font-weight: 600;
+      color: #004080;
+    }
+
+    @media (min-width: 768px) {
       .profile-section {
-        display: flex;
+        flex-direction: row;
         justify-content: center;
-        align-items: center;
-        padding: 50px;
+        gap: 2rem;
       }
 
       .profile-section img {
-        width: 250px;
-        height: auto;
-        border-radius: 10px;
-        margin-right: 20px;
+        margin-bottom: 0;
       }
 
       .profile-description {
-        max-width: 600px;
-      }
-
-      .profile-description h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #333;
-      }
-
-      .profile-description p {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        color: #666;
-      }
-
-      /* Navigation */
-      nav {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 2;
-      }
-
-      nav ul {
-        list-style: none;
-        margin: 0;
         padding: 0;
-        display: flex;
       }
+    }
+  </style>
+</head>
+<body>
 
-      nav ul li {
-        margin-left: 20px;
-      }
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Preetika Kaur, M.S.</h1>
+      <p>PhD Student | Civil Engineering</p>
+    </div>
 
-      nav ul li a {
-        text-decoration: none;
-        color: white;
-        font-size: 1rem;
-        padding: 10px 20px;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Research.html">Research</a></li>
+        <li><a href="Teaching.html">Teaching</a></li>
+        <li><a href="Awards_Honors.html">Awards</a></li>
+        <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      nav ul li a:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-    </style>
-  </head>
-  <body>
-    
-    <!-- Hero Section with Mountain Background -->
-    <header class="hero">
-      <div class="hero-content">
-        <h1>Preetika Kaur, M.S.</h1>
-        <p>PhD Student | Civil Engineering</p>
-      </div>
+  <!-- Profile Section -->
+  <section class="profile-section">
+    <img src="images/snow_PK.jpg" alt="Preetika Kaur Profile Picture">
+    <div class="profile-description">
+      <h2>About Me</h2>
+      <p>I’m a Ph.D. student in the<strong><li><a href="https://webbhydrology.weebly.com/">Mountain Hydrology Research Group</a></li></strong> at the University of Wyoming, specializing in 
+        <strong>snow hydrology</strong>, <strong>remote sensing</strong>, and <strong>geospatial data science</strong>. My research spans 
+        the cryosphere–agriculture continuum and is driven by a passion for using data to solve water resource challenges.</p>
 
-      <!-- Navigation Bar -->
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Research.html">Research</a></li>
-          <li><a href="Teaching.html" class="button is-primary">Teaching</a></li>
-          <li><a href="Awards_Honors.html">Awards</a></li>
-          <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+      <p>My doctoral work focuses on simulating <strong>snowpack dynamics</strong> in the western U.S. using <strong>SnowModel</strong>, 
+        validated with <strong>field-based SWE</strong> and <strong>GPR-derived snow depth</strong> observations. I also assess the feasibility 
+        of retrieving SWE using <strong>L-band InSAR (UAVSAR)</strong> across various terrains and forest conditions.</p>
 
-    <!-- Profile Section -->
-    <section class="profile-section">
-      <img src="images/snow_PK.jpg" alt="Preetika Kaur Profile Picture">
-      <div class="profile-description">
-        <h2></h2>
-        <p>
-          I’m a PhD student in civil engineering with a passion for advancing my understanding of snow hydrology. 
-          I am interested in exploring the power of remote sensing technologies, emerging snow models, and developing machine learning models 
-          from extensively available climate datasets, thereby contributing to the sustainable management of water resources in snow-dominated regions.
-        </p>
-      </div>
-    </section>
+      <p>I’m building an <strong>open-source interactive map</strong> in <strong>Google Earth Engine</strong> to visualize SWE retrieval feasibility, 
+        assisting researchers and water managers in identifying suitable areas for L-band InSAR use.</p>
 
-  </body>
+      <p>I hold an M.S. from Auburn University, where I used <strong>X-ray CT scanning</strong> and <strong>ArcPy automation</strong> to study 
+        nutrient and water retention under conservation agriculture systems.</p>
+
+      <p><strong>Tools & Skills:</strong> UAVSAR, Landsat, ArcGIS, GEE (JavaScript & Python), SnowModel, Python (NumPy, Pandas, GeoPandas), R, SAS.</p>
+
+      <p>I aim to empower <strong>agriculture and water-reliant communities</strong> by combining satellite data, modeling, and AI—ensuring 
+        <strong>healthier soils</strong> and <strong>resilient snow-fed water systems</strong> in a changing climate.</p>
+    </div>
+  </section>
+
+</body>
 </html>
