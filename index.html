@@ -6,6 +6,15 @@
   <title>Preetika Kaur</title>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --transition: 0.25s ease;
+      --bg-overlay: rgba(0, 0, 0, 0.4);
+      --nav-bg: rgba(0, 0, 0, 0.5);
+      --nav-radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: 'Raleway', sans-serif;
@@ -31,31 +40,49 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: var(--bg-overlay);
       z-index: 1;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
+      padding: 0 1rem;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin: 0;
     }
 
     .hero p {
-      font-size: 1.5rem;
-      margin-top: 10px;
+      font-size: 1.2rem;
+      margin-top: 8px;
     }
 
     /* Navigation */
-    nav {
+    .site-header {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 2;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0.75rem 1rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1rem;
+      z-index: 3;
+    }
+
+    .logo {
+      display: none; /* placeholder if you ever want a logo on mobile */
+      font-weight: bold;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      position: relative;
     }
 
     nav ul {
@@ -64,24 +91,103 @@
       padding: 0;
       display: flex;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
     nav ul li {
-      margin-left: 15px;
+      margin: 0;
     }
 
     nav ul li a {
       text-decoration: none;
       color: white;
-      font-size: 1rem;
+      font-size: 0.9rem;
       padding: 8px 14px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: var(--nav-bg);
       border-radius: 5px;
-      transition: background-color 0.3s ease;
+      transition: background-color var(--transition);
+      display: block;
+      white-space: nowrap;
     }
 
-    nav ul li a:hover {
+    nav ul li a:hover,
+    nav ul li a:focus {
       background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Hamburger */
+    #nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: white;
+      padding: 6px;
+      border-radius: 6px;
+      position: relative;
+      z-index: 5;
+    }
+
+    #nav-toggle:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    /* Mobile menu panel */
+    .mobile-panel {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: #fff;
+      border: 2px dashed #555;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+      display: none;
+      min-width: 180px;
+      z-index: 4;
+    }
+
+    .mobile-panel ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .mobile-panel a {
+      background: none;
+      color: #222;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-weight: 500;
+      display: block;
+      border: 1px solid transparent;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .mobile-panel a:hover,
+    .mobile-panel a:focus {
+      background: #f0f0f0;
+      border-color: #ccc;
+    }
+
+    /* Show desktop nav normally */
+    @media (max-width: 900px) {
+      nav ul {
+        display: none; /* Hide default links on small */
+      }
+
+      #nav-toggle {
+        display: block;
+      }
+
+      .logo {
+        display: block;
+      }
+
+      .mobile-panel.show {
+        display: block;
+      }
     }
 
     /* Profile Section */
@@ -145,24 +251,41 @@
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with nav overlay -->
   <header class="hero">
+    <div class="site-header">
+      <div class="logo">Preetika Kaur</div>
+      <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        ☰
+      </button>
+      <nav>
+        <ul class="desktop-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Research.html">Research</a></li>
+          <li><a href="Teaching.html">Teaching</a></li>
+          <li><a href="Awards_Honors.html">Awards</a></li>
+          <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Mobile dashed panel -->
+        <div id="mobile-menu" class="mobile-panel" aria-label="Mobile navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Research.html">Research</a></li>
+            <li><a href="Teaching.html">Teaching</a></li>
+            <li><a href="Awards_Honors.html">Awards</a></li>
+            <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
     <div class="hero-content">
       <h1>Preetika Kaur, M.S.</h1>
       <p>PhD Student | Civil Engineering</p>
     </div>
-
-    <!-- Navigation -->
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Research.html">Research</a></li>
-        <li><a href="Teaching.html">Teaching</a></li>
-        <li><a href="Awards_Honors.html">Awards</a></li>
-        <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
   </header>
 
   <!-- Profile Section -->
@@ -178,6 +301,35 @@
         nutrient and water transport through soil porous media.</p>
     </div>
   </section>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Toggle mobile panel
+    toggle.addEventListener('click', (e) => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('show');
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !toggle.contains(e.target)) {
+        mobileMenu.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        mobileMenu.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+  </script>
 
 </body>
 </html>

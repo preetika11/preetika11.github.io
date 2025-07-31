@@ -1,20 +1,28 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teaching </title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teaching | Preetika Kaur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet" />
     <style>
+      :root {
+        --transition: 0.25s ease;
+        --nav-bg: rgba(0, 0, 0, 0.5);
+      }
+      * { box-sizing: border-box; }
+
       body {
         margin: 0;
         font-family: 'Raleway', sans-serif;
-        line-height: 1.2;
+        line-height: 1.4;
         background-color: #f2f2f2;
+        color: #333;
       }
 
+      /* Hero */
       .hero {
-        background-image: url('images/background1.JPG'); 
+        background-image: url('images/background1.JPG');
         height: 50vh;
         background-size: cover;
         background-position: center;
@@ -25,67 +33,129 @@
         text-align: center;
         color: white;
       }
-
       .hero::before {
         content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 1;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 0 1rem;
+      }
+      .hero h1 {
+        font-size: 3rem;
+        margin: 0;
+      }
+
+      /* Header/nav overlay */
+      .site-header {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.4);
-        z-index: 1;
+        padding: 0.75rem 1rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+        z-index: 3;
       }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
+      .logo {
+        display: none;
+        font-weight: bold;
+        color: white;
+        font-size: 1.1rem;
       }
-
-      .hero h1 {
-        font-size: 4rem;
-        margin: 0;
-      }
-
-      .hero p {
-        font-size: 1.5rem;
-        margin-top: 10px;
-      }
-
       nav {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 2;
+        position: relative;
       }
-
       nav ul {
         list-style: none;
         margin: 0;
         padding: 0;
         display: flex;
+        gap: 10px;
       }
-
       nav ul li {
-        margin-left: 20px;
+        margin: 0;
       }
-
       nav ul li a {
         text-decoration: none;
         color: white;
-        font-size: 1rem;
-        padding: 10px 20px;
-        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 0.9rem;
+        padding: 10px 18px;
+        background-color: var(--nav-bg);
         border-radius: 5px;
-        transition: background-color 0.3s ease;
+        transition: background-color var(--transition);
+        display: block;
+        white-space: nowrap;
       }
-
-      nav ul li a:hover {
+      nav ul li a:hover,
+      nav ul li a:focus {
         background-color: rgba(0, 0, 0, 0.8);
       }
 
+      /* Hamburger */
+      #nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.6rem;
+        cursor: pointer;
+        color: white;
+        padding: 6px;
+        border-radius: 6px;
+      }
+      #nav-toggle:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+
+      /* Mobile dashed panel */
+      .mobile-panel {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        background: #fff;
+        border: 2px dashed #555;
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        display: none;
+        min-width: 180px;
+        z-index: 4;
+      }
+      .mobile-panel ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .mobile-panel a {
+        background: none;
+        color: #222;
+        padding: 10px 12px;
+        border-radius: 6px;
+        font-weight: 500;
+        display: block;
+        border: 1px solid transparent;
+        text-decoration: none;
+        transition: background var(--transition), border-color var(--transition);
+      }
+      .mobile-panel a:hover,
+      .mobile-panel a:focus {
+        background: #f0f0f0;
+        border-color: #ccc;
+      }
+
+      /* Content Section */
       .content-section {
-        padding: 50px;
+        padding: 50px 20px;
         max-width: 900px;
         margin: auto;
       }
@@ -93,30 +163,78 @@
       .content-section h2 {
         font-size: 2.5rem;
         color: #333;
+        margin-top: 0;
       }
 
-      .content-section p, .content-section iframe {
+      .content-section p,
+      .content-section iframe {
         font-size: 1.1rem;
         color: #444;
         line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      @media (max-width: 900px) {
+        nav ul {
+          display: none;
+        }
+        #nav-toggle {
+          display: block;
+        }
+        .logo {
+          display: block;
+          color: white;
+        }
+        .mobile-panel.show {
+          display: block;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+        .content-section {
+          padding: 30px 15px;
+        }
+        .content-section h2 {
+          font-size: 2rem;
+        }
       }
     </style>
   </head>
   <body>
     <header class="hero">
+      <div class="site-header">
+        <div class="logo">Preetika Kaur</div>
+        <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          ☰
+        </button>
+        <nav>
+          <ul class="desktop-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Research.html">Research</a></li>
+            <li><a href="Teaching.html">Teaching</a></li>
+            <li><a href="Awards_Honors.html">Awards</a></li>
+            <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+
+          <div id="mobile-menu" class="mobile-panel" aria-label="Mobile navigation">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="Research.html">Research</a></li>
+              <li><a href="Teaching.html">Teaching</a></li>
+              <li><a href="Awards_Honors.html">Awards</a></li>
+              <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
       <div class="hero-content">
         <h1>Teaching</h1>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Research.html">Research</a></li>
-          <li><a href="Teaching.html">Teaching</a></li>
-          <li><a href="Awards_Honors.html">Awards</a></li>
-          <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
     </header>
 
     <section class="content-section">
@@ -128,5 +246,31 @@
       <h2>Slides</h2>
       <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQWNBtikXFebpcvG-jHyrXWGyjw1CsJQVS4S8q7FSBUE1c5UV3MgrrCshpmXL48DMLBPZngylYr2eAe/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="480" allowfullscreen></iframe>
     </section>
+
+    <script>
+      const toggle = document.getElementById('nav-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !toggle.contains(e.target)) {
+          mobileMenu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          mobileMenu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.focus();
+        }
+      });
+    </script>
   </body>
 </html>

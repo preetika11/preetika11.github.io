@@ -1,11 +1,20 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awards & Honors | Preetika Kaur</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet" />
     <style>
+      :root {
+        --transition: 0.25s ease;
+        --nav-bg: rgba(0, 0, 0, 0.5);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
         font-family: 'Raleway', sans-serif;
@@ -27,16 +36,6 @@
         color: white;
       }
 
-      .hero h1 {
-        font-size: 4rem;
-        margin: 0;
-      }
-
-      .hero p {
-        font-size: 1.5rem;
-        margin-top: 10px;
-      }
-
       .hero::before {
         content: '';
         position: absolute;
@@ -51,13 +50,42 @@
       .hero-content {
         position: relative;
         z-index: 2;
+        padding: 0 1rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin: 0;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+      }
+
+      /* Header/nav overlay */
+      .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0.75rem 1rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+        z-index: 3;
+      }
+
+      .logo {
+        display: none;
+        font-weight: bold;
+        color: white;
+        font-size: 1.1rem;
       }
 
       nav {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 2;
+        position: relative;
       }
 
       nav ul {
@@ -65,24 +93,89 @@
         margin: 0;
         padding: 0;
         display: flex;
+        gap: 10px;
       }
 
       nav ul li {
-        margin-left: 20px;
+        margin: 0;
       }
 
       nav ul li a {
         text-decoration: none;
         color: white;
-        font-size: 1rem;
-        padding: 10px 20px;
-        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 0.9rem;
+        padding: 10px 18px;
+        background-color: var(--nav-bg);
         border-radius: 5px;
-        transition: background-color 0.3s ease;
+        transition: background-color var(--transition);
+        display: block;
+        white-space: nowrap;
       }
 
-      nav ul li a:hover {
+      nav ul li a:hover,
+      nav ul li a:focus {
         background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Hamburger button */
+      #nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.6rem;
+        cursor: pointer;
+        color: white;
+        padding: 6px;
+        border-radius: 6px;
+        position: relative;
+        z-index: 5;
+      }
+
+      #nav-toggle:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+
+      /* Mobile dashed panel */
+      .mobile-panel {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        background: #fff;
+        border: 2px dashed #555;
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        display: none;
+        min-width: 180px;
+        z-index: 4;
+      }
+
+      .mobile-panel ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .mobile-panel a {
+        background: none;
+        color: #222;
+        padding: 10px 12px;
+        border-radius: 6px;
+        font-weight: 500;
+        display: block;
+        border: 1px solid transparent;
+        text-decoration: none;
+        transition: background var(--transition), border-color var(--transition);
+      }
+
+      .mobile-panel a:hover,
+      .mobile-panel a:focus {
+        background: #f0f0f0;
+        border-color: #ccc;
       }
 
       .content-section {
@@ -138,6 +231,25 @@
         color: #555;
       }
 
+      @media (max-width: 900px) {
+        nav ul {
+          display: none;
+        }
+
+        #nav-toggle {
+          display: block;
+        }
+
+        .logo {
+          display: block;
+          color: white;
+        }
+
+        .mobile-panel.show {
+          display: block;
+        }
+      }
+
       @media (max-width: 768px) {
         .hero h1 {
           font-size: 2.5rem;
@@ -162,43 +274,64 @@
   </head>
   <body>
     <header class="hero">
+      <div class="site-header">
+        <div class="logo">Preetika Kaur</div>
+        <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          ☰
+        </button>
+        <nav>
+          <ul class="desktop-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Research.html">Research</a></li>
+            <li><a href="Teaching.html">Teaching</a></li>
+            <li><a href="Awards_Honors.html">Awards</a></li>
+            <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+
+          <div id="mobile-menu" class="mobile-panel" aria-label="Mobile navigation">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="Research.html">Research</a></li>
+              <li><a href="Teaching.html">Teaching</a></li>
+              <li><a href="Awards_Honors.html">Awards</a></li>
+              <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
       <div class="hero-content">
         <h1>Awards & Honors</h1>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Research.html">Research</a></li>
-          <li><a href="Teaching.html">Teaching</a></li>
-          <li><a href="Awards_Honors.html">Awards</a></li>
-          <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
     </header>
 
     <section class="content-section">
       <h2>University of Wyoming</h2>
       <div class="award-block">
-        <img src="images/international.JPG" alt="3MT">
+        <img src="images/international.JPG" alt="International Student Scholarship">
         <div class="award-info">
           <h4>International Student Scholarship</h4>
           <p>Awarded by University of Wyoming for Fall 2025 / Spring 2026.</p>
         </div>
       </div>
-      </div>      <div class="award-block">
-        <img src="images/3mt.jpeg" alt="3MT">
+
+      <div class="award-block">
+        <img src="images/3mt.jpeg" alt="Three Minute Thesis Competition">
         <div class="award-info">
           <h4>Three Minute Thesis Competition</h4>
           <p>Second Place in the College of Engineering <a href="https://www.uwyo.edu/news/2025/06/uw-school-of-graduate-education-organizes-first-round-of-3mt-competitions.html">Three Minute Thesis Competition</a></p>
         </div>
-      </div>      <div class="award-block">
-        <img src="images/usc.jpg" alt="Open Science Hackathon">
+      </div>
+
+      <div class="award-block">
+        <img src="images/usc.jpg" alt="Open GeoScience Hackathon">
         <div class="award-info">
           <h4>Open GeoScience Hackathon</h4>
           <p>Travel scholarship for 2025 open geoscience hackathon at the Marine Sciences Institute of University of Southern California.</p>
         </div>
       </div>
+
       <div class="award-block">
         <img src="images/snowex_hackweek.JPG" alt="SnowEx Hackweek">
         <div class="award-info">
@@ -206,20 +339,23 @@
           <p>Funding support (travel and accommodation) by UW eScience institute for 2024 SnowEx hack week.</p>
         </div>
       </div>
+
       <div class="award-block">
-        <img src="images/uofc.jpg" alt="AI+Science">
+        <img src="images/uofc.jpg" alt="AI+Science Summer School">
         <div class="award-info">
           <h4>AI+Science Summer School</h4>
           <p>Travel scholarship for 2024 AI+Science Summer School at the University of Chicago Data Science Institute.</p>
         </div>
       </div>
+
       <div class="award-block">
-        <img src="images/dev_summit.jpg" alt="ESRI Dev Summit">
+        <img src="images/dev_summit.jpg" alt="ESRI Developers Summit">
         <div class="award-info">
           <h4>ESRI Developers Summit</h4>
           <p>Student assistantship for ESRI’s Developers Summit in Palm Springs, California.</p>
         </div>
       </div>
+
       <div class="award-block">
         <img src="images/fed_gis.JPG" alt="ESRI FED GIS">
         <div class="award-info">
@@ -227,8 +363,9 @@
           <p>Graduate student assistantship for ESRI’s Federal GIS conference in Washington, DC.</p>
         </div>
       </div>
+
       <div class="award-block">
-        <img src="images/international.JPG" alt="3MT">
+        <img src="images/international.JPG" alt="International Student Scholarship 2024">
         <div class="award-info">
           <h4>International Student Scholarship</h4>
           <p>Awarded by University of Wyoming for Fall 2024 / Spring 2025.</p>
@@ -244,21 +381,21 @@
         </div>
       </div>
       <div class="award-block">
-        <img src="images/outstanding_ms.JPG" alt="Outstanding Graduate Student Award">
+        <img src="images/outstanding_ms.JPG" alt="Outstanding Master’s Student Award">
         <div class="award-info">
           <h4>Outstanding Master’s Student Award</h4>
           <p>Recognized in 2024 by <a href="https://graduate.auburn.edu/news-archive/news-2024-april-28/">Auburn University Graduate School</a></p>
         </div>
       </div>
       <div class="award-block">
-        <img src="images/boyd_scott.jpg" alt="Boyd Scott Graduate Research Award">
+        <img src="images/boyd_scott.jpg" alt="Boyd-Scott Graduate Research Award">
         <div class="award-info">
           <h4>Boyd-Scott Graduate Research Award</h4>
           <p>2nd place award recognizing excellence in agricultural engineering research at <a href="https://asabe.org/boyd-scott">ASABE AIM 2024</a>.</p>
         </div>
       </div>
       <div class="award-block">
-        <img src="images/aabfeio.jpg" alt="AABFEIO">
+        <img src="images/aabfeio.jpg" alt="AABFEIO Graduate Student Paper Award">
         <div class="award-info">
           <h4>AABFEIO Graduate Student Paper Award</h4>
           <p>1st place award at ASABE 2023 held in Omaha, Nebraska.</p>
@@ -280,5 +417,31 @@
         </div>
       </div>
     </section>
+
+    <script>
+      const toggle = document.getElementById('nav-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !toggle.contains(e.target)) {
+          mobileMenu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          mobileMenu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.focus();
+        }
+      });
+    </script>
   </body>
 </html>

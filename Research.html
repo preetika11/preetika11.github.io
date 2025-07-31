@@ -1,21 +1,28 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Research | Preetika Kaur</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet" />
     <style>
+      :root {
+        --transition: 0.25s ease;
+        --nav-bg: rgba(0, 0, 0, 0.5);
+      }
+      * { box-sizing: border-box; }
+
       body {
         margin: 0;
         font-family: 'Raleway', sans-serif;
         line-height: 1.6;
         background-color: #f2f2f2;
+        color: #333;
       }
 
-      /* Fullscreen Hero Section */
+      /* Hero */
       .hero {
-        background-image: url('images/background1.JPG'); /* Replace with your mountains image */
+        background-image: url('images/background1.JPG');
         height: 50vh;
         background-size: cover;
         background-position: center;
@@ -26,98 +33,157 @@
         text-align: center;
         color: white;
       }
-
+      .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 1;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 0 1rem;
+      }
       .hero h1 {
         font-size: 3rem;
         margin: 0;
       }
 
-      /* Overlay */
-      .hero::before {
-        content: '';
+      /* Header/nav overlay */
+      .site-header {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.4); /* Adds a dark overlay */
-        z-index: 1;
+        padding: 0.75rem 1rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+        z-index: 3;
       }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
+      .logo {
+        display: none;
+        font-weight: bold;
+        color: white;
+        font-size: 1.1rem;
       }
-
-      /* Navigation */
       nav {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 2;
+        position: relative;
       }
-
       nav ul {
         list-style: none;
         margin: 0;
         padding: 0;
         display: flex;
+        gap: 10px;
       }
-
       nav ul li {
-        margin-left: 20px;
+        margin: 0;
       }
-
       nav ul li a {
         text-decoration: none;
         color: white;
-        font-size: 1rem;
-        padding: 10px 20px;
-        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 0.9rem;
+        padding: 10px 18px;
+        background-color: var(--nav-bg);
         border-radius: 5px;
-        transition: background-color 0.3s ease;
+        transition: background-color var(--transition);
+        display: block;
+        white-space: nowrap;
       }
-
-      nav ul li a:hover {
+      nav ul li a:hover,
+      nav ul li a:focus {
         background-color: rgba(0, 0, 0, 0.8);
       }
 
-      /* Content Section */
+      /* Hamburger */
+      #nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.6rem;
+        cursor: pointer;
+        color: white;
+        padding: 6px;
+        border-radius: 6px;
+      }
+      #nav-toggle:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+
+      /* Mobile dashed panel */
+      .mobile-panel {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        background: #fff;
+        border: 2px dashed #555;
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        display: none;
+        min-width: 180px;
+        z-index: 4;
+      }
+      .mobile-panel ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .mobile-panel a {
+        background: none;
+        color: #222;
+        padding: 10px 12px;
+        border-radius: 6px;
+        font-weight: 500;
+        display: block;
+        border: 1px solid transparent;
+        text-decoration: none;
+        transition: background var(--transition), border-color var(--transition);
+      }
+      .mobile-panel a:hover,
+      .mobile-panel a:focus {
+        background: #f0f0f0;
+        border-color: #ccc;
+      }
+
+      /* Content */
       .content-section {
-        padding: 50px;
+        padding: 50px 20px;
         max-width: 1000px;
         margin: 0 auto;
       }
-
       .content-section h2 {
         font-size: 2.5rem;
         margin-bottom: 20px;
         color: #333;
       }
-
       .research-item {
         display: flex;
         align-items: flex-start;
         margin-bottom: 40px;
+        gap: 40px;
       }
-
       .research-item img {
-        width: 400px;  /* Adjust as needed */
+        width: 400px;
         height: auto;
-        margin-right: 60px;
         border-radius: 10px;
+        flex-shrink: 0;
       }
-
       .research-details {
         max-width: 750px;
       }
-
       .research-details h4 {
         font-size: 1.8rem;
         margin-bottom: 10px;
         color: #0066cc;
       }
-
       .research-details p {
         font-size: 1.2rem;
         line-height: 1.8;
@@ -125,25 +191,39 @@
         margin-bottom: 20px;
       }
 
-      /* Responsive Design */
+      /* Responsive */
+      @media (max-width: 900px) {
+        nav ul {
+          display: none;
+        }
+        #nav-toggle {
+          display: block;
+        }
+        .logo {
+          display: block;
+          color: white;
+        }
+        .mobile-panel.show {
+          display: block;
+        }
+      }
+
       @media (max-width: 768px) {
         .hero h1 {
-          font-size: 2.5rem;
+          font-size: 2.2rem;
         }
-
         .content-section h2 {
           font-size: 2rem;
         }
-
         .research-item {
           flex-direction: column;
           align-items: center;
         }
-
         .research-item img {
-          margin: 0 0 40px 0;
+          margin: 0 0 30px 0;
+          width: 100%;
+          max-width: 500px;
         }
-
         .research-details h4 {
           font-size: 1.5rem;
         }
@@ -151,24 +231,38 @@
     </style>
   </head>
   <body>
-
-    <!-- Hero Section -->
+    <!-- Hero + Nav -->
     <header class="hero">
+      <div class="site-header">
+        <div class="logo">Preetika Kaur</div>
+        <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          ☰
+        </button>
+        <nav>
+          <ul class="desktop-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Research.html">Research</a></li>
+            <li><a href="Teaching.html">Teaching</a></li>
+            <li><a href="Awards_Honors.html">Awards</a></li>
+            <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+
+          <div id="mobile-menu" class="mobile-panel" aria-label="Mobile navigation">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="Research.html">Research</a></li>
+              <li><a href="Teaching.html">Teaching</a></li>
+              <li><a href="Awards_Honors.html">Awards</a></li>
+              <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
       <div class="hero-content">
         <h1>Research</h1>
       </div>
-
-      <!-- Navigation Bar -->
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Research.html">Research</a></li>
-          <li><a href="Teaching.html" class="button is-primary">Teaching</a></li>
-          <li><a href="Awards_Honors.html">Awards</a></li>
-          <li><a href="Curruculum Vitae- Preetika.pdf">CV</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
     </header>
 
     <!-- Research Content -->
@@ -177,7 +271,7 @@
 
       <!-- PhD Research Item 1 -->
       <div class="research-item">
-        <img src="images/snowmodel.jpeg" alt="SnowModel Research Image">
+        <img src="images/snowmodel.jpeg" alt="SnowModel Research Image" />
         <div class="research-details">
           <h4>Understanding snowpack dynamics in Jemez mountains of NM using SnowModel</h4>
           <p>
@@ -188,7 +282,7 @@
 
       <!-- PhD Research Item 2 -->
       <div class="research-item">
-        <img src="images/insar.JPG" alt="InSAR Global Feasibility Map Image">
+        <img src="images/insar.JPG" alt="InSAR Global Feasibility Map Image" />
         <div class="research-details">
           <h4>L-Band InSAR global feasibility map for SWE retrieval</h4>
           <p>
@@ -201,7 +295,7 @@
 
       <!-- Masters Research Item 1 -->
       <div class="research-item">
-        <img src="images/covercrops.JPG" alt="Cover Crop Effects Image">
+        <img src="images/covercrops.JPG" alt="Cover Crop Effects Image" />
         <div class="research-details">
           <h4>Cover crop effects on X-ray computed tomography–derived soil pore characteristics</h4>
           <p>
@@ -212,7 +306,7 @@
 
       <!-- Masters Research Item 2 -->
       <div class="research-item">
-        <img src="images/tillage.jpg" alt="Soil Pores in Tillage Image">
+        <img src="images/tillage.jpg" alt="Soil Pores in Tillage Image" />
         <div class="research-details">
           <h4>Characterization of soil pores in strip-tilled and conventionally-tilled soil using X-ray computed tomography</h4>
           <p>
@@ -223,7 +317,7 @@
 
       <!-- Masters Research Item 3 -->
       <div class="research-item">
-        <img src="images/soilpore.jpg" alt="CT Scanning Resolution Image">
+        <img src="images/soilpore.jpg" alt="CT Scanning Resolution Image" />
         <div class="research-details">
           <h4>Effect of Image Resolution and Soil Core Size on Soil Pore Characteristics</h4>
           <p>
@@ -231,8 +325,32 @@
           </p>
         </div>
       </div>
-
     </section>
 
+    <script>
+      const toggle = document.getElementById('nav-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      toggle?.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (mobileMenu && toggle && !mobileMenu.contains(e.target) && !toggle.contains(e.target)) {
+          mobileMenu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu && toggle) {
+          mobileMenu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.focus();
+        }
+      });
+    </script>
   </body>
 </html>
