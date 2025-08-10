@@ -55,7 +55,7 @@
       justify-content: flex-end;
       align-items: center;
       gap: 1rem;
-      z-index: 3;
+      z-index: 20; /* above scrim */
     }
     .logo { display: none; font-weight: bold; color: white; font-size: 1.1rem; }
     nav { position: relative; }
@@ -76,7 +76,7 @@
     #nav-toggle {
       display: none; background: none; border: none; font-size: 1.6rem;
       cursor: pointer; color: white; padding: 6px; border-radius: 6px;
-      position: relative; z-index: 5;
+      position: relative; z-index: 25;
     }
     #nav-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
@@ -92,7 +92,7 @@
       box-shadow: 0 12px 32px rgba(0,0,0,0.15);
       display: none;                 /* hidden by default */
       min-width: 180px;
-      z-index: 4;
+      z-index: 30; /* above scrim + header button */
     }
     .mobile-panel ul {
       display: flex; flex-direction: column; gap: 0.5rem;
@@ -108,7 +108,7 @@
     /* Backdrop (scrim) */
     .scrim {
       position: fixed; inset: 0; background: rgba(0,0,0,.4);
-      z-index: 3; display: none;
+      z-index: 10; display: none; /* below header/menu */
     }
     .scrim.show { display: block; }
 
@@ -147,7 +147,7 @@
       .profile-description { padding: 0; }
     }
 
-    /* === BULLETPROOF OVERRIDE (keep last) === */
+    /* Bulletproof override (keep last) */
     .mobile-panel { display: none !important; }
     @media (max-width: 900px) { .mobile-panel.show { display: block !important; } }
   </style>
@@ -240,6 +240,13 @@
       if (!clickInside) closeMenu();
     });
     scrim.addEventListener('click', closeMenu);
+
+    // Close the menu after a link tap (nice cleanup)
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target.closest('a')) {
+        setTimeout(() => closeMenu(), 50);
+      }
+    });
 
     // Close on Escape
     document.addEventListener('keydown', (e) => {
