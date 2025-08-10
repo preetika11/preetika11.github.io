@@ -234,18 +234,18 @@
       expanded ? closeMenu() : openMenu();
     });
 
-    // Close when clicking outside or on scrim
-    document.addEventListener('click', (e) => {
-      const clickInside = mobileMenu.contains(e.target) || toggle.contains(e.target);
-      if (!clickInside) closeMenu();
-    });
+    // Close when tapping the backdrop
     scrim.addEventListener('click', closeMenu);
 
-    // Close the menu after a link tap (nice cleanup)
+    // Ensure navigation on mobile: intercept link taps, then navigate manually
     mobileMenu.addEventListener('click', (e) => {
-      if (e.target.closest('a')) {
-        setTimeout(() => closeMenu(), 50);
-      }
+      const a = e.target.closest('a');
+      if (!a) return;
+      e.preventDefault();            // stop the default click from being cancelled by DOM changes
+      const href = a.getAttribute('href');
+      closeMenu();
+      // allow paint, then navigate (better on iOS Safari)
+      requestAnimationFrame(() => { window.location.assign(href); });
     });
 
     // Close on Escape
