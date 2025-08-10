@@ -35,37 +35,21 @@
       text-align: center;
       color: white;
     }
-
     .hero::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      inset: 0;
       background-color: var(--bg-overlay);
       z-index: 1;
     }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 1rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 8px;
-    }
+    .hero-content { position: relative; z-index: 2; padding: 0 1rem; }
+    .hero h1 { font-size: 3rem; margin: 0; }
+    .hero p { font-size: 1.2rem; margin-top: 8px; }
 
     /* Navigation */
     .site-header {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       padding: 0.75rem 1rem;
       display: flex;
       justify-content: flex-end;
@@ -73,62 +57,28 @@
       gap: 1rem;
       z-index: 3;
     }
-
-    .logo {
-      display: none; /* placeholder if you ever want a logo on mobile */
-      font-weight: bold;
-      color: white;
-      font-size: 1.1rem;
-    }
-
+    .logo { display: none; font-weight: bold; color: white; font-size: 1.1rem; }
     nav { position: relative; }
-
     nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-wrap: wrap; gap: 10px;
     }
-
     nav ul li { margin: 0; }
-
     nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-size: 0.9rem;
-      padding: 8px 14px;
-      background-color: var(--nav-bg);
-      border-radius: 5px;
-      transition: background-color var(--transition);
-      display: block;
-      white-space: nowrap;
+      text-decoration: none; color: white; font-size: 0.9rem;
+      padding: 8px 14px; background-color: var(--nav-bg);
+      border-radius: 5px; transition: background-color var(--transition);
+      display: block; white-space: nowrap;
     }
-
-    nav ul li a:hover,
-    nav ul li a:focus {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
+    nav ul li a:hover, nav ul li a:focus { background-color: rgba(0,0,0,0.8); }
 
     /* Hamburger */
     #nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.6rem;
-      cursor: pointer;
-      color: white;
-      padding: 6px;
-      border-radius: 6px;
-      position: relative;
-      z-index: 5;
+      display: none; background: none; border: none; font-size: 1.6rem;
+      cursor: pointer; color: white; padding: 6px; border-radius: 6px;
+      position: relative; z-index: 5;
     }
-
-    #nav-toggle:focus-visible {
-      outline: 2px solid #fff;
-      outline-offset: 2px;
-    }
+    #nav-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
     /* Mobile dashed panel */
     .mobile-panel {
@@ -139,55 +89,35 @@
       border: 2px dashed #555;
       border-radius: 10px;
       padding: 1rem;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-      display: none;                /* hidden by default */
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+      display: none;                 /* hidden by default */
       min-width: 180px;
       z-index: 4;
     }
-
     .mobile-panel ul {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      margin: 0; padding: 0; list-style: none;
     }
-
     .mobile-panel a {
-      background: none;
-      color: #222;
-      padding: 10px 12px;
-      border-radius: 6px;
-      font-weight: 500;
-      display: block;
-      border: 1px solid transparent;
-      text-decoration: none;
-      transition: background var(--transition), border-color var(--transition);
+      background: none; color: #222; padding: 10px 12px; border-radius: 6px;
+      font-weight: 500; display: block; border: 1px solid transparent;
+      text-decoration: none; transition: background var(--transition), border-color var(--transition);
     }
-
-    .mobile-panel a:hover,
-    .mobile-panel a:focus {
-      background: #f0f0f0;
-      border-color: #ccc;
-    }
+    .mobile-panel a:hover, .mobile-panel a:focus { background: #f0f0f0; border-color: #ccc; }
 
     /* Backdrop (scrim) */
     .scrim {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.4);
-      z-index: 3; /* beneath .mobile-panel (4), above page */
-      display: none;
+      position: fixed; inset: 0; background: rgba(0,0,0,.4);
+      z-index: 3; display: none;
     }
     .scrim.show { display: block; }
 
     /* Mobile/tablet behavior */
     @media (max-width: 900px) {
-      nav ul { display: none; }          /* hide desktop nav */
-      #nav-toggle { display: block; }    /* show hamburger */
+      nav ul { display: none; }       /* hide desktop nav */
+      #nav-toggle { display: block; } /* show hamburger */
       .logo { display: block; }
-      .mobile-panel.show { display: block; } /* show when toggled */
+      .mobile-panel.show { display: block; }
     }
 
     /* On desktop, force-hide the mobile panel no matter what */
@@ -197,55 +127,29 @@
 
     /* Profile Section */
     .profile-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 3rem 1rem;
-      background-color: #ffffff;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 3rem 1rem; background-color: #ffffff;
     }
-
     .profile-section img {
-      width: 250px;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-      border: 3px solid #ccc;
-      margin-bottom: 1.5rem;
+      width: 250px; height: auto; border-radius: 10px; object-fit: cover;
+      border: 3px solid #ccc; margin-bottom: 1.5rem;
     }
-
-    .profile-description {
-      max-width: 850px;
-      text-align: left;
-      padding: 0 1rem;
-    }
-
+    .profile-description { max-width: 850px; text-align: left; padding: 0 1rem; }
     .profile-description h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: #2c3e50;
+      font-size: 2.5rem; margin-bottom: 1rem; text-align: center; color: #2c3e50;
     }
-
-    .profile-description p {
-      font-size: 1.1rem;
-      color: #333;
-      margin-bottom: 1rem;
-    }
-
-    .profile-description strong {
-      font-weight: 600;
-      color: #004080;
-    }
+    .profile-description p { font-size: 1.1rem; color: #333; margin-bottom: 1rem; }
+    .profile-description strong { font-weight: 600; color: #004080; }
 
     @media (min-width: 768px) {
-      .profile-section {
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
-      }
+      .profile-section { flex-direction: row; justify-content: center; gap: 2rem; }
       .profile-section img { margin-bottom: 0; }
       .profile-description { padding: 0; }
     }
+
+    /* === BULLETPROOF OVERRIDE (keep last) === */
+    .mobile-panel { display: none !important; }
+    @media (max-width: 900px) { .mobile-panel.show { display: block !important; } }
   </style>
 </head>
 <body>
@@ -254,9 +158,7 @@
   <header class="hero">
     <div class="site-header">
       <div class="logo">Preetika Kaur</div>
-      <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        ☰
-      </button>
+      <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
       <nav>
         <ul class="desktop-nav">
           <li><a href="index.html">Home</a></li>
@@ -323,6 +225,9 @@
       document.body.style.overflow = '';
     }
 
+    // Close on load in case 'show' is stuck from cache
+    window.addEventListener('DOMContentLoaded', closeMenu);
+
     // Toggle mobile panel
     toggle.addEventListener('click', () => {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
@@ -336,7 +241,7 @@
     });
     scrim.addEventListener('click', closeMenu);
 
-    // Close on escape
+    // Close on Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') { closeMenu(); toggle.focus(); }
     });
